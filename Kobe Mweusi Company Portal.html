@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Kobe Mweusi Business</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{--p:#7C5CFC;--ps:#F1EEFF;--k:#111;--g:#8E8E93;--pg:#E9E9EC;--l:#ECECF1;--ok:#22A06B;--am:#C98A0B;--rd:#E5484D}
+*{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:light}
+body{font:14px/1.45 Outfit,system-ui,sans-serif;background:var(--pg);color:var(--k);min-height:100vh}
+button,input,textarea{font:inherit;color:inherit}
+[hidden]{display:none!important}
+h1{font-size:24px;letter-spacing:-.5px}
+.mut{color:var(--g)}
+.eb{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--p);margin-bottom:6px}
+.card{background:#fff;border-radius:20px;padding:18px;box-shadow:0 4px 18px rgba(20,15,40,.04)}
+.card h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--g);margin-bottom:12px}
+.btn{border:1.5px solid var(--k);background:transparent;border-radius:11px;min-height:38px;padding:0 16px;font-weight:600;cursor:pointer}
+.btn.pri{background:var(--k);color:#fff}
+.btn.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.chip{display:inline-block;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700}
+.c-p{background:#FFF4DB;color:var(--am)}.c-a{background:#E3F6EE;color:var(--ok)}.c-r{background:#FDE8EA;color:var(--rd)}
+input[type=text],input[type=password],textarea{width:100%;border:0;background:#F4F4F7;border-radius:12px;padding:12px 14px;outline:2px solid transparent}
+input:focus,textarea:focus{outline-color:var(--p)}
+/* login */
+#login{min-height:100vh;display:grid;grid-template-columns:1fr}
+.l-side{display:none;background:linear-gradient(150deg,#7C5CFC,#1a1033 70%,#000);color:#fff;padding:48px;flex-direction:column;justify-content:space-between}
+.l-side h2{font-size:34px;line-height:1.15;letter-spacing:-1px;margin:0 0 12px;color:#fff;text-transform:none}
+.l-main{display:grid;place-items:center;padding:20px}
+.l-card{width:100%;max-width:400px}
+.l-card .card{padding:26px}
+.l-card label{display:block;font-weight:600;margin:14px 0 6px}
+.l-card .btn{width:100%;margin-top:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;line-height:1.02;letter-spacing:-.6px}
+.brand img{width:44px}.brand b span{display:block;color:var(--p)}
+.l-side .brand b span{color:#fff}
+@media(min-width:800px){#login{grid-template-columns:1.1fr 1fr}.l-side{display:flex}}
+/* app */
+#app{display:none}
+.burger{position:fixed;top:12px;left:12px;z-index:30;width:46px;height:46px;border:0;border-radius:14px;background:var(--ps);color:var(--p);cursor:pointer;display:grid;place-items:center}
+.burger svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.side{position:fixed;inset:0 auto 0 0;width:232px;background:#fff;border-radius:0 24px 24px 0;padding:12px 10px;display:flex;flex-direction:column;z-index:20;transition:transform .25s;box-shadow:0 6px 28px rgba(20,15,40,.06)}
+.closed .side{transform:translateX(-105%)}
+.side .brand{min-height:46px;padding:0 6px 12px 56px;border-bottom:1px solid var(--l);margin-bottom:10px}
+.side .brand img{width:34px}.side .brand{font-size:16px}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--g);padding:0 12px 6px}
+.nav{display:flex;flex-direction:column;gap:3px}
+.nav button{display:flex;align-items:center;gap:11px;height:44px;padding:0 12px;border:0;border-radius:12px;background:none;font-weight:500;font-size:15px;cursor:pointer;text-align:left}
+.nav svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.nav button:hover{background:var(--ps);color:var(--p)}
+.nav button.on{background:var(--k);color:#fff}
+.nav i{margin-left:auto;font-style:normal;background:var(--p);color:#fff;border-radius:99px;font-size:11px;font-weight:700;padding:1px 8px}
+.bot{margin-top:auto;border-top:1px solid var(--l);padding-top:12px}
+.who{display:flex;gap:10px;align-items:center;margin-bottom:10px;padding:0 4px}
+.av{width:36px;height:36px;border-radius:50%;background:var(--p);color:#fff;display:grid;place-items:center;font-weight:700}
+.scrim{display:none}
+main{margin-left:248px;padding:74px 24px 40px 8px;max-width:1160px}
+.closed main{margin-left:0;padding-left:16px}
+.view{display:none}.view.on{display:block}
+.sub{margin:4px 0 18px}
+.seg{display:inline-flex;background:#fff;border-radius:12px;padding:3px;margin-bottom:16px}
+.seg button{border:0;background:none;border-radius:9px;padding:7px 14px;font-weight:600;cursor:pointer;color:var(--g)}
+.seg button.on{background:var(--k);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:12px}
+.stat b{display:block;font-size:26px;letter-spacing:-.8px;margin-top:2px}
+.up{color:var(--ok);font-size:12px;font-weight:600}
+.grid{display:grid;gap:12px;grid-template-columns:1fr;margin-bottom:12px}
+.bar{display:grid;grid-template-columns:110px 1fr 40px;gap:10px;align-items:center;margin:9px 0;font-size:13px}
+.bar span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar u{height:8px;border-radius:9px;background:var(--l);position:relative;overflow:hidden}.bar u i{position:absolute;inset:0 auto 0 0;background:var(--p);border-radius:9px}
+.bar b{text-align:right}
+.lg{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--g);margin-top:8px}
+.lg s{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;text-decoration:none}
+.don{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.q{margin-bottom:12px}
+.q h3{font-size:16px;margin-bottom:2px}
+.q .row{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.chk{display:flex;gap:9px;align-items:center;margin:8px 0;cursor:pointer}
+.chk input{width:18px;height:18px;accent-color:var(--p)}
+.diff{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.diff div{border-radius:12px;padding:10px 12px;background:#F4F4F7;font-size:13px}
+.diff .n{background:#E3F6EE}
+.diff small{display:block;color:var(--g);font-weight:600;margin-bottom:2px}
+.acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.note{margin-top:10px}
+.done{display:flex;justify-content:space-between;align-items:center;padding:12px 18px}
+.empty{text-align:center;color:var(--g);padding:30px}
+@media(min-width:800px){.stats{grid-template-columns:repeat(4,1fr)}.grid{grid-template-columns:1.5fr 1fr}.bar{grid-template-columns:150px 1fr 44px}}
+@media(max-width:800px){.side{box-shadow:0 12px 40px rgba(20,15,40,.22)}main,.closed main{margin-left:0;padding:74px 14px 40px}body:not(.closed) .scrim{display:block;position:fixed;inset:0;background:rgba(17,17,17,.35);z-index:15}}
+
+.modal{position:fixed;inset:0;background:rgba(17,17,17,.55);z-index:50;display:grid;place-items:center;padding:12px}
+.mbox{background:#fff;border-radius:20px;width:min(900px,100%);max-height:92vh;display:flex;flex-direction:column;overflow:hidden}
+.mh{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:14px 16px;border-bottom:1px solid var(--l)}
+.mh .btn{min-height:34px;padding:0 12px}
+.mb{display:grid;grid-template-columns:1fr;overflow:auto}
+.pgw{overflow:auto;background:#F4F4F7;padding:16px;max-height:55vh}
+.pg{background:#fff;margin:0 auto;padding:22px;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.12)}
+.pg i{display:block;height:8px;background:#E4E4EA;border-radius:4px;margin:9px 0}
+.dt{padding:16px}.dt div{padding:8px 0;border-bottom:1px solid var(--l)}.dt small{color:var(--g);display:block}
+.mg{display:grid;gap:12px;grid-template-columns:1fr}
+.msg{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--l);padding:12px 6px;cursor:pointer;color:inherit}
+.msg.on{background:var(--ps);border-radius:12px}.msg b{display:block}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--p);margin-right:6px}
+.rt{display:grid;gap:8px;grid-template-columns:1fr;padding:12px 0;border-top:1px solid var(--l);align-items:center}
+.st{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-top:1px solid var(--l)}
+.ban{border-radius:16px;padding:14px 18px;font-weight:600;margin-bottom:12px}.ban.ok{background:#E3F6EE;color:var(--ok)}.ban.w{background:#FFF4DB;color:var(--am)}
+.er{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--l)}
+select{width:100%;border:0;background:#F4F4F7;border-radius:12px;padding:12px 14px;font:inherit}
+@media(min-width:800px){.mb{grid-template-columns:1.6fr 1fr}.mg{grid-template-columns:1fr 1.4fr}.rt{grid-template-columns:150px 1fr 80px}}
+
+.ban.bad{background:#FDE8EA;color:var(--rd)}.ban .btn{margin-left:12px;min-height:32px;padding:0 12px}
+.fr{margin:12px 0 0}.fr label{display:block;font-weight:600;margin-bottom:5px}.two{display:grid;gap:8px;grid-template-columns:1fr}
+.pv{border:1px solid var(--l);border-radius:16px;padding:14px}.pv .lg0{width:46px;height:46px;border-radius:12px;background:#fff;border:1px solid var(--l);display:grid;place-items:center;font-weight:700;font-size:20px;margin-right:12px}
+.tile{border-radius:14px;aspect-ratio:1/1;display:grid;place-items:end start;padding:10px;color:#fff;font-weight:700;background-size:cover;background-position:center;overflow:hidden}
+.tg{display:grid;gap:8px;grid-template-columns:1fr 1fr;margin-top:10px}
+.orow{display:grid;gap:6px;margin:10px 0;padding:10px;border-radius:14px;background:#F4F4F7}
+.err{color:var(--rd);font-size:13px;margin-top:8px}
+.star{color:var(--p);letter-spacing:2px}
+.off{display:inline-block;background:var(--p);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:2px 6px;margin-left:6px}
+.rep{margin-top:10px;padding-left:12px;border-left:2px solid var(--l)}
+@media(min-width:800px){.two{grid-template-columns:1fr 1fr}.lay{display:grid;grid-template-columns:1.3fr 1fr;gap:12px;align-items:start}}
+</style></head><body>
+<section id="login"><div class="l-side"><div class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABBCAMAAAAZtlGZAAAASFBMVEX4uyf91xvtrR77wCb7wCn7wSi2tgn/AAB/fwDwfw4AAAC/fwD4uh3/qlX//3/////6vCj+win4uyf2uSj6vSf6vSf6vSf5vCdFYFTfAAAAGHRSTlNOEgnSVZkDAQIDAQSUAwIA+f4uEs+Rr202vVpCAAAE2klEQVR42q1ZbbujKAwNqG3v7s5UAoT//083Caio6NU+5dNM1Zy854QL72vHG9Tj7fvegSuyU6QwlhMoAn4RwEMMo3Nukp//Tcl/BwBVepGbT0EZY9sMj5ASoL8EgHF0k87sGTkU2FcZcRz83lwq5oYI5jcAU8Tzywn9o/z6tKhOkydh8zGERSE3Ep4CPKHL4iPs3W0L+BirZ1Z/U2ODILkRTgAsqRrhMJgmqbgwR8JQ1hvEWAskj9MhAAZ9+zRXvGg8I1iVT0vkexGBBwCgFsbfUjG/hrP+k0IwgBUlGd42AVIrgoeGKkJU+TOuU+fwT9ACUPl0qVq9KB78O1XyBUxUf785jtQAUPnxYqV6KYsous7yBc2RVAE4BtoBgLshXz2dazs+l+h32X4U/20BUF82N5pZkV9/4hdZWwDPYXPDrZas8W2qJM72sGkPLL8ztxq+hGH0zU7Gwd4ACGYwN0dKclWE56aaG0daZ5EfNXVvHjGBKq3SQJTbnmQwbNzp/hNP3UOQKPi6hxTxqixsMqi7O3Pnkl0N2T5OzoBVBx1df1/+20qarnJFA7xr16yI+8SA979BesIS36RzdjdwtOHi+5NDCwAWjhDglUMJdQTWht4DeE5jVqQT2P3Qjx8bMFsgzdWF9ZCF2gD6TD5qRZWps+2TUDdZ+Ei+L8NRh0M6Il7aUcInLlK/xCIfDpkdZjJ1nRKu5PMAa+u/ANhCs+imESZkaqHjOZ1yU6TMtG5BmK5QlynQZ+TXpInM4cVuZ/uFfEXX7sPrJpVcseJCLIxRbjVSfrUvk/7Mgp5ZbswQwknN6dowdJ2T8ZfMMkvwDMAnqfIA3KqKGWwH+tfeL7wBkOrg6qzjPHdnQYZQWD+hF+Za7BDuDsCrmRxk0bpMKTHmltN77Kem81i11C3AI81LktI+LDrmzWYc6wXK5Q0gSCpUjhcLDgFsrIVkTN9HKptTlugWAF1JMnUT4jDFwIV/2gCmll/ngkEYdGkaqx2TNzC7FNnc44+aJRTeMcvfsRYrzkcOBG/Kxu4o10SKkmuPExDsakkt/c5c69L5yCcvaUntLMqGruVfOQ9yFYAZD+ugcpCjG80UxtoCoVT003rNzgZwVT527cCczMnJal/c1bQeiic5sVf9hzd2XrspEMUhYcMwM5sdS9NObUM95UW+ntRcZ2G5PMiXE9igvLOHxEHRHtxVWNNjrWLuFCvxWtXU1xLstNnIIJeCS/baZYhPYSpX9o44KcxNI1RmYCWfi/h4Sq0BrLRSIU5pDu/Dm9w9yyyaAVQN/b89u0CCzd7rXBcbMZ06rN4VZEsHao8My3t4G8DLsBn6I/qrztun2ya3mJu6DttDn5+cT0rT6xWHa1/ByCjSAK7TaQFI3eYrw7UgB82f1R2VjrIg4+65rpvM2uEoBv5nrUy+B9QECtU9oGfuUSaaNm85chOWg07wc+XObsrVuhgWomFN3D12ZchduhTMbsh1wGfopsG2pJc1ibrVTaG4zF66dbRJeRGgN0ssEhUdqyzgccccQE4CRH/5WhNDK0UMpi5H9zLtO3TR38Nbuq6U2i0KfmfnYDpXkpQ2Hfzp8fUFgGWJ1EIYekClAyl2IZnvAGRWOm46eYj4FRdV7JQrKw+cMJGwbwJkS/JfFPzrl/f+BzLgc4puuOV1AAAAAElFTkSuQmCC" alt=""><b>Kobe<span>Mweusi</span></b></div>
+<div><h2>Kobe Mweusi for business</h2><p style="opacity:.8;max-width:360px">Keep your numbers right, answer reviews, run polls and earn the Verified badge.</p></div><small style="opacity:.6">Your numbers are shown exactly as you enter them.</small></div>
+<div class="l-main"><div class="l-card"><div class="brand" style="margin-bottom:18px"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABBCAMAAAAZtlGZAAAASFBMVEX4uyf91xvtrR77wCb7wCn7wSi2tgn/AAB/fwDwfw4AAAC/fwD4uh3/qlX//3/////6vCj+win4uyf2uSj6vSf6vSf6vSf5vCdFYFTfAAAAGHRSTlNOEgnSVZkDAQIDAQSUAwIA+f4uEs+Rr202vVpCAAAE2klEQVR42q1ZbbujKAwNqG3v7s5UAoT//083Caio6NU+5dNM1Zy854QL72vHG9Tj7fvegSuyU6QwlhMoAn4RwEMMo3Nukp//Tcl/BwBVepGbT0EZY9sMj5ASoL8EgHF0k87sGTkU2FcZcRz83lwq5oYI5jcAU8Tzywn9o/z6tKhOkydh8zGERSE3Ep4CPKHL4iPs3W0L+BirZ1Z/U2ODILkRTgAsqRrhMJgmqbgwR8JQ1hvEWAskj9MhAAZ9+zRXvGg8I1iVT0vkexGBBwCgFsbfUjG/hrP+k0IwgBUlGd42AVIrgoeGKkJU+TOuU+fwT9ACUPl0qVq9KB78O1XyBUxUf785jtQAUPnxYqV6KYsous7yBc2RVAE4BtoBgLshXz2dazs+l+h32X4U/20BUF82N5pZkV9/4hdZWwDPYXPDrZas8W2qJM72sGkPLL8ztxq+hGH0zU7Gwd4ACGYwN0dKclWE56aaG0daZ5EfNXVvHjGBKq3SQJTbnmQwbNzp/hNP3UOQKPi6hxTxqixsMqi7O3Pnkl0N2T5OzoBVBx1df1/+20qarnJFA7xr16yI+8SA979BesIS36RzdjdwtOHi+5NDCwAWjhDglUMJdQTWht4DeE5jVqQT2P3Qjx8bMFsgzdWF9ZCF2gD6TD5qRZWps+2TUDdZ+Ei+L8NRh0M6Il7aUcInLlK/xCIfDpkdZjJ1nRKu5PMAa+u/ANhCs+imESZkaqHjOZ1yU6TMtG5BmK5QlynQZ+TXpInM4cVuZ/uFfEXX7sPrJpVcseJCLIxRbjVSfrUvk/7Mgp5ZbswQwknN6dowdJ2T8ZfMMkvwDMAnqfIA3KqKGWwH+tfeL7wBkOrg6qzjPHdnQYZQWD+hF+Za7BDuDsCrmRxk0bpMKTHmltN77Kem81i11C3AI81LktI+LDrmzWYc6wXK5Q0gSCpUjhcLDgFsrIVkTN9HKptTlugWAF1JMnUT4jDFwIV/2gCmll/ngkEYdGkaqx2TNzC7FNnc44+aJRTeMcvfsRYrzkcOBG/Kxu4o10SKkmuPExDsakkt/c5c69L5yCcvaUntLMqGruVfOQ9yFYAZD+ugcpCjG80UxtoCoVT003rNzgZwVT527cCczMnJal/c1bQeiic5sVf9hzd2XrspEMUhYcMwM5sdS9NObUM95UW+ntRcZ2G5PMiXE9igvLOHxEHRHtxVWNNjrWLuFCvxWtXU1xLstNnIIJeCS/baZYhPYSpX9o44KcxNI1RmYCWfi/h4Sq0BrLRSIU5pDu/Dm9w9yyyaAVQN/b89u0CCzd7rXBcbMZ06rN4VZEsHao8My3t4G8DLsBn6I/qrztun2ya3mJu6DttDn5+cT0rT6xWHa1/ByCjSAK7TaQFI3eYrw7UgB82f1R2VjrIg4+65rpvM2uEoBv5nrUy+B9QECtU9oGfuUSaaNm85chOWg07wc+XObsrVuhgWomFN3D12ZchduhTMbsh1wGfopsG2pJc1ibrVTaG4zF66dbRJeRGgN0ssEhUdqyzgccccQE4CRH/5WhNDK0UMpi5H9zLtO3TR38Nbuq6U2i0KfmfnYDpXkpQ2Hfzp8fUFgGWJ1EIYekClAyl2IZnvAGRWOm46eYj4FRdV7JQrKw+cMJGwbwJkS/JfFPzrl/f+BzLgc4puuOV1AAAAAElFTkSuQmCC" alt=""><b>Kobe<span>Mweusi</span></b></div>
+<div class="card" id="s1"><h1>Sign in</h1><p class="mut sub">Company portal</p><label for="em">Email or phone</label><input type="text" id="em"><label for="pw">Password</label><input type="password" id="pw"><p class="mut" style="margin-top:10px">Forgot password?</p><button class="btn pri" id="go1" type="button">Sign in</button><button class="btn" id="reg" type="button">Register your company</button></div>
+<div class="card" id="s2" hidden><h1>Register</h1><p class="mut sub">Then send your documents to get verified.</p><label for="rn">Company name</label><input type="text" id="rn"><label for="rc">Category</label><select id="rc"><option>Banking</option><option>Telecom</option><option>Government</option><option>Utilities</option><option>Insurance</option><option>Shopping</option><option>Transport</option><option>Education</option><option>Other</option></select><label for="re">Email or phone</label><input type="text" id="re"><label for="rp">Password</label><input type="password" id="rp"><p class="err" id="rer" hidden>Fill in every field.</p><button class="btn pri" id="go2" type="button">Create account</button><button class="btn" id="back" type="button">Back to sign in</button></div>
+<p class="mut" style="text-align:center;margin-top:14px;font-size:12px">Prototype: any details work.</p></div></div></section>
+<div id="app"><button class="burger" id="bg" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="scrim" id="sc"></div>
+<aside class="side"><div class="brand"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABBCAMAAAAZtlGZAAAASFBMVEX4uyf91xvtrR77wCb7wCn7wSi2tgn/AAB/fwDwfw4AAAC/fwD4uh3/qlX//3/////6vCj+win4uyf2uSj6vSf6vSf6vSf5vCdFYFTfAAAAGHRSTlNOEgnSVZkDAQIDAQSUAwIA+f4uEs+Rr202vVpCAAAE2klEQVR42q1ZbbujKAwNqG3v7s5UAoT//083Caio6NU+5dNM1Zy854QL72vHG9Tj7fvegSuyU6QwlhMoAn4RwEMMo3Nukp//Tcl/BwBVepGbT0EZY9sMj5ASoL8EgHF0k87sGTkU2FcZcRz83lwq5oYI5jcAU8Tzywn9o/z6tKhOkydh8zGERSE3Ep4CPKHL4iPs3W0L+BirZ1Z/U2ODILkRTgAsqRrhMJgmqbgwR8JQ1hvEWAskj9MhAAZ9+zRXvGg8I1iVT0vkexGBBwCgFsbfUjG/hrP+k0IwgBUlGd42AVIrgoeGKkJU+TOuU+fwT9ACUPl0qVq9KB78O1XyBUxUf785jtQAUPnxYqV6KYsous7yBc2RVAE4BtoBgLshXz2dazs+l+h32X4U/20BUF82N5pZkV9/4hdZWwDPYXPDrZas8W2qJM72sGkPLL8ztxq+hGH0zU7Gwd4ACGYwN0dKclWE56aaG0daZ5EfNXVvHjGBKq3SQJTbnmQwbNzp/hNP3UOQKPi6hxTxqixsMqi7O3Pnkl0N2T5OzoBVBx1df1/+20qarnJFA7xr16yI+8SA979BesIS36RzdjdwtOHi+5NDCwAWjhDglUMJdQTWht4DeE5jVqQT2P3Qjx8bMFsgzdWF9ZCF2gD6TD5qRZWps+2TUDdZ+Ei+L8NRh0M6Il7aUcInLlK/xCIfDpkdZjJ1nRKu5PMAa+u/ANhCs+imESZkaqHjOZ1yU6TMtG5BmK5QlynQZ+TXpInM4cVuZ/uFfEXX7sPrJpVcseJCLIxRbjVSfrUvk/7Mgp5ZbswQwknN6dowdJ2T8ZfMMkvwDMAnqfIA3KqKGWwH+tfeL7wBkOrg6qzjPHdnQYZQWD+hF+Za7BDuDsCrmRxk0bpMKTHmltN77Kem81i11C3AI81LktI+LDrmzWYc6wXK5Q0gSCpUjhcLDgFsrIVkTN9HKptTlugWAF1JMnUT4jDFwIV/2gCmll/ngkEYdGkaqx2TNzC7FNnc44+aJRTeMcvfsRYrzkcOBG/Kxu4o10SKkmuPExDsakkt/c5c69L5yCcvaUntLMqGruVfOQ9yFYAZD+ugcpCjG80UxtoCoVT003rNzgZwVT527cCczMnJal/c1bQeiic5sVf9hzd2XrspEMUhYcMwM5sdS9NObUM95UW+ntRcZ2G5PMiXE9igvLOHxEHRHtxVWNNjrWLuFCvxWtXU1xLstNnIIJeCS/baZYhPYSpX9o44KcxNI1RmYCWfi/h4Sq0BrLRSIU5pDu/Dm9w9yyyaAVQN/b89u0CCzd7rXBcbMZ06rN4VZEsHao8My3t4G8DLsBn6I/qrztun2ya3mJu6DttDn5+cT0rT6xWHa1/ByCjSAK7TaQFI3eYrw7UgB82f1R2VjrIg4+65rpvM2uEoBv5nrUy+B9QECtU9oGfuUSaaNm85chOWg07wc+XObsrVuhgWomFN3D12ZchduhTMbsh1wGfopsG2pJc1ibrVTaG4zF66dbRJeRGgN0ssEhUdqyzgccccQE4CRH/5WhNDK0UMpi5H9zLtO3TR38Nbuq6U2i0KfmfnYDpXkpQ2Hfzp8fUFgGWJ1EIYekClAyl2IZnvAGRWOm46eYj4FRdV7JQrKw+cMJGwbwJkS/JfFPzrl/f+BzLgc4puuOV1AAAAAElFTkSuQmCC" alt=""><b>Kobe<span>Mweusi</span></b></div><div class="lbl">COMPANY</div><nav class="nav" id="nav"><button data-v="overview"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Overview</button><button data-v="listing"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4ZM13 7l4 4"/></svg>My listing<i id="n-l"></i></button><button data-v="reviews"><svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3Z"/></svg>Reviews<i id="n-r"></i></button><button data-v="community"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12Z"/></svg>Community<i id="n-q"></i></button><button data-v="polls"><svg viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>Polls</button><button data-v="verification"><svg viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 4.5-3.2 7.6-8 9-4.8-1.4-8-4.5-8-9V6l8-3Z"/><path d="m9 12 2 2 4-4"/></svg>Verification</button></nav>
+<div class="bot"><div class="who"><div class="av" id="av">S</div><div><b id="wn">Sample Bank</b><div class="mut" style="font-size:12px">Company account</div></div></div><button class="btn" id="out" style="width:100%" type="button">Log out</button></div></aside>
+<main>
+<section class="view" id="v-overview"><div class="eb">Overview</div><h1 id="hi">Welcome</h1><p class="mut sub">How people find and use your listing.</p><div id="bn"></div>
+<div class="seg" id="seg"><button data-r="1">Today</button><button data-r="7" class="on">7 days</button><button data-r="30">30 days</button></div><div class="stats" id="stats"></div>
+<div class="grid"><div class="card"><h2>Views and calls</h2><div id="line"></div><div class="lg"><span><s style="background:var(--p)"></s>Profile views</span><span><s style="background:var(--k)"></s>Call taps</span></div></div><div class="card"><h2>How people find you</h2><div id="find"></div></div></div>
+<div class="grid"><div class="card"><h2>Latest poll results</h2><div id="pr"></div></div><div class="card"><h2>Waiting for you</h2><div id="att"></div></div></div></section>
+<section class="view" id="v-listing"><div class="eb">My listing</div><h1>My listing</h1><p class="mut sub">Changes go to the admin for approval. Your live listing stays the same until then.</p><div class="lay"><div class="card" id="lf"></div><div><div class="card"><h2>Preview</h2><div id="pvw"></div></div><div id="pnd" style="margin-top:12px"></div></div></div></section>
+<section class="view" id="v-reviews"><div class="eb">Reviews</div><h1>Reviews</h1><p class="mut sub">Replies show as Official.</p><div id="rv"></div></section>
+<section class="view" id="v-community"><div class="eb">Community</div><h1>Community questions</h1><p class="mut sub">Questions people tagged to your company.</p><div id="cq"></div></section>
+<section class="view" id="v-polls"><div class="eb">Polls</div><h1>Polls</h1><p class="mut sub">Polls go live right away. No approval needed.</p><div class="lay"><div class="card" id="pf"></div><div><div class="card"><h2>Preview</h2><div id="pp"></div></div></div></div><h1 style="margin:22px 0 12px;font-size:18px">Your polls</h1><div id="pl"></div></section>
+<section class="view" id="v-verification"><div class="eb">Verification</div><h1>Verification</h1><p class="mut sub">Send your documents. We renew the badge every 90 days.</p><div id="vb"></div></section>
+</main></div>
+<script>
+
+function $(i){return document.getElementById(i)}
+function h(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function series(n,base,k){var a=[];for(var i=0;i<n;i++)a.push(Math.round(base*(1+.28*Math.sin(i*.9+k)+i/n*.25)));return a}
+function sum(a){return a.reduce(function(x,y){return x+y},0)}
+function lineChart(a,b,id){var W=560,H=200,P=24,mx=Math.max.apply(null,a)*1.1,g='';
+ for(var i=0;i<=4;i++){var y=P+(H-2*P)*i/4;g+='<line x1="'+P+'" x2="'+(W-8)+'" y1="'+y+'" y2="'+y+'" stroke="#ECECF1"/>'}
+ function pts(z){return z.map(function(v,i){return (P+(W-P-8)*i/(z.length-1)).toFixed(1)+','+(H-P-(H-2*P)*v/mx).toFixed(1)}).join(' ')}
+ $(id||'line').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Searches and calls chart">'+g+'<polyline fill="none" stroke="#7C5CFC" stroke-width="3" stroke-linejoin="round" points="'+pts(a)+'"/><polyline fill="none" stroke="#111" stroke-width="2.5" stroke-linejoin="round" points="'+pts(b)+'"/></svg>'}
+function bars(box,rows,m){box.textContent='';var mx=rows[0][1];rows.forEach(function(r){var d=h('div','bar');d.appendChild(h('span',null,r[0]));var u=h('u'),i=h('i');i.style.width=(r[1]/mx*100)+'%';u.appendChild(i);d.appendChild(u);d.appendChild(h('b',null,Math.round(r[1]*m)));box.appendChild(d)})}
+function donut(p,id){var t=sum(p.map(function(x){return x[1]})),o=0,svg='<svg viewBox="0 0 42 42" width="120" height="120" role="img" aria-label="Company status"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#ECECF1" stroke-width="6"/>';
+ p.forEach(function(x){var v=x[1]/t*100;svg+='<circle cx="21" cy="21" r="15.9" fill="none" stroke="'+x[2]+'" stroke-width="6" stroke-dasharray="'+v+' '+(100-v)+'" stroke-dashoffset="'+(25-o)+'"/>';o+=v});
+ var l='<div>';p.forEach(function(x){l+='<div style="margin:4px 0"><s style="display:inline-block;width:9px;height:9px;border-radius:50%;background:'+x[2]+';margin-right:7px"></s>'+x[0]+' <b>'+x[1]+'</b></div>'});$(id||'don').innerHTML=svg+'</svg>'+l+'</div>'}
+var body=document.body,range=7,PEND=null,TPL=['linear-gradient(135deg,#7C5CFC,#4B2FD6)','linear-gradient(135deg,#444,#000)','linear-gradient(135deg,#3DDC97,#15804F)','linear-gradient(135deg,#FFB938,#C98A0B)'];
+var CO={name:'Sample Bank',cat:'Banking',verified:'2026-11-10',desc:'Sample description of the bank.',topics:'Lost card, Reverse a transaction, Loan enquiry',phones:[['Customer care','+255 7XX XXX XXX']],wa:'+255 7XX XXX XXX',email:'info@example.com',web:'example.com',hrs:['08:00-17:00','09:00-13:00','Closed'],br:[['Main branch','Street name, City'],['Second branch','Street name, City']]};
+var REV=[{n:'Asha M.',s:5,t:'My card was replaced in two days.',r:''},{n:'John K.',s:4,t:'Good service, but the queue at the branch was long.',r:'Thank you John, we are adding a second counter.'},{n:'Neema P.',s:3,t:'The phone line was busy for a long time.',r:''}];
+var Q=[{n:'@neema_k',t:'My bank card was blocked after I travelled. Who do I ask to unblock it?',r:''},{n:'@mary_t',t:'Which branch is open on Saturdays?',r:''}];
+var PL=[{q:'Which card color should we release?',o:[['Purple',412,'',0],['Black',335,'',1],['Green',128,'',2]],end:'2026-12-01',on:1}];
+var DOCS=[['BRELA certificate.pdf','Approved'],['TIN certificate.jpg','Approved'],['Phone check by call','Approved']];
+function fmt(d){return new Date(d+'T00:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'})}
+function until(){var d=new Date(CO.verified+'T00:00:00Z');d.setUTCDate(d.getUTCDate()+90);return d}
+function days(){return CO.verified?Math.ceil((until()-new Date())/864e5):null}
+function avg(){return REV.length?REV.reduce(function(a,r){return a+r.s},0)/REV.length:0}
+function stars(n){n=Math.round(n);return '★★★★★'.slice(0,n)+'☆☆☆☆☆'.slice(0,5-n)}
+/* login */
+$('go1').onclick=function(){if($('em').value.trim()&&$('pw').value)enter()};
+$('reg').onclick=function(){$('s1').hidden=true;$('s2').hidden=false};$('back').onclick=function(){$('s2').hidden=true;$('s1').hidden=false};
+$('go2').onclick=function(){if(!$('rn').value.trim()||!$('re').value.trim()||!$('rp').value){$('rer').hidden=false;return}CO={name:$('rn').value.trim(),cat:$('rc').value,verified:'',desc:'',topics:'',phones:[['','']],wa:'',email:'',web:'',hrs:['','',''],br:[]};REV=[];Q=[];PL=[];DOCS=[];enter('verification')};
+function enter(v){$('login').style.display='none';$('app').style.display='block';$('wn').textContent=CO.name;$('av').textContent=CO.name.charAt(0).toUpperCase();$('hi').textContent='Welcome, '+CO.name;if(innerWidth<=800)body.classList.add('closed');build();go(v||location.hash.slice(1)||'overview')}
+$('out').onclick=function(){$('app').style.display='none';$('login').style.display='grid';$('s2').hidden=true;$('s1').hidden=false;$('pw').value=''};
+$('bg').onclick=function(){body.classList.toggle('closed')};$('sc').onclick=function(){body.classList.add('closed')};
+var views=['overview','listing','reviews','community','polls','verification'];
+function go(v){if(views.indexOf(v)<0)v='overview';if(location.hash!=='#'+v)location.hash=v;show(v)}
+function show(v){if(views.indexOf(v)<0)v='overview';views.forEach(function(x){$('v-'+x).classList.toggle('on',x===v)});document.querySelectorAll('#nav button').forEach(function(b){b.classList.toggle('on',b.dataset.v===v)});window.scrollTo(0,0);if(v==='overview')ov();if(v==='verification')ver()}
+$('nav').onclick=function(e){var b=e.target.closest('button');if(!b)return;if(innerWidth<=800)body.classList.add('closed');go(b.dataset.v)};
+addEventListener('hashchange',function(){if($('app').style.display==='block')show(location.hash.slice(1))});
+function cnt(){[['n-l',PEND?1:0],['n-r',REV.filter(function(r){return!r.r}).length],['n-q',Q.filter(function(r){return!r.r}).length]].forEach(function(p){var n=$(p[0]);n.textContent=p[1];n.hidden=!p[1]})}
+/* overview */
+$('seg').onclick=function(e){var b=e.target.closest('button');if(!b)return;range=+b.dataset.r;$('seg').querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});ov()};
+function banner(){var d=days(),b=h('div','ban'),t;if(d===null){b.className='ban bad';t='Unverified. Send your documents to get the Verified badge.'}else if(d<=14){b.className='ban w';t=d>0?'Re-verify in '+d+' days.':'Re-verify needed now.'}else t='Verified until '+fmt(until().toISOString().slice(0,10))+' ('+d+' days left).';
+ b.appendChild(document.createTextNode(t));if(d===null||d<=14){var g=h('button','btn','Open verification');g.type='button';g.onclick=function(){go('verification')};b.appendChild(g)}return b}
+function ov(){$('bn').textContent='';$('bn').appendChild(banner());var n=range===1?24:range,s=series(n,range===1?14:90,0),c=series(n,range===1?3:22,2),m=range===1?.2:range===7?1:4.2;
+ var st=[['Profile views',sum(s).toLocaleString()],['Call taps',sum(c).toLocaleString()],['WhatsApp taps',Math.round(sum(c)*.4).toLocaleString()],['Rating',REV.length?avg().toFixed(1)+' / 5':'No reviews']];
+ $('stats').textContent='';st.forEach(function(x){var d=h('div','card stat');d.appendChild(h('span','mut',x[0]));d.appendChild(h('b',null,x[1]));$('stats').appendChild(d)});
+ lineChart(s,c);bars($('find'),[['lost card',180],['bank card',120],['reverse transaction',75],['loan',52]],m);
+ $('pr').textContent='';var p=PL[0];if(p)bars($('pr'),p.o.map(function(o){return [o[0],o[1]]}),1);else $('pr').appendChild(h('div','empty','No polls yet.'));
+ var a=$('att');a.textContent='';[[REV.filter(function(r){return!r.r}).length,'reviews need a reply','reviews'],[Q.filter(function(r){return!r.r}).length,'questions need an answer','community'],[PEND?1:0,'listing change waiting for approval','listing']].forEach(function(x){var r=h('div');r.style.cssText='display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid var(--l)';r.appendChild(h('span',null,x[0]+' '+x[1]));var b=h('button','btn','Open');b.type='button';b.onclick=function(){go(x[2])};r.appendChild(b);a.appendChild(r)});cnt()}
+/* threads: reviews + community */
+function thread(box,arr,rev){box.textContent='';if(!arr.length)box.appendChild(h('div','card empty','Nothing here yet.'));
+ arr.forEach(function(it){var c=h('div','card q'),r=h('div','row'),l=h('div');l.appendChild(h('h3',null,it.n));if(rev)l.appendChild(h('div','star',stars(it.s)));r.appendChild(l);r.appendChild(h('span','chip '+(it.r?'c-a':'c-p'),it.r?'Replied':'Needs reply'));c.appendChild(r);c.appendChild(h('p',null,it.t)).style.margin='8px 0';
+  if(it.r){var p=h('div','rep'),b=h('b',null,CO.name);b.appendChild(h('span','off','Official'));p.appendChild(b);p.appendChild(h('div',null,it.r));c.appendChild(p)}
+  else{var ta=h('textarea');ta.rows=2;ta.placeholder='Write your reply';var e=h('div','err');e.hidden=true;var b2=h('button','btn pri','Send reply');b2.type='button';b2.style.marginTop='8px';
+   b2.onclick=function(){var v=ta.value.trim();if(v.length<3){e.textContent='Write at least 3 characters.';e.hidden=false;return}if(/\+?\d{7,}/.test(v.replace(/[\s\-().]/g,''))||/https?:\/\/|www\./i.test(v)){e.textContent='Phone numbers and links cannot be posted here. Your numbers are in My listing.';e.hidden=false;return}it.r=v;thread(box,arr,rev);cnt()};c.appendChild(ta);c.appendChild(e);c.appendChild(b2)}
+  box.appendChild(c)});cnt()}
+/* listing */
+function F(id,l,v,t){return '<div class="fr"><label for="'+id+'">'+l+'</label>'+(t==='ta'?'<textarea id="'+id+'" rows="3"></textarea>':'<input type="text" id="'+id+'">')+'</div>'}
+function rows(id,arr,a,b){var box=$(id);box.textContent='';arr.forEach(function(x,i){var r=h('div','two');r.style.marginTop='8px';var p=h('input');p.type='text';p.placeholder=a;p.value=x[0];var q=h('input');q.type='text';q.placeholder=b;q.value=x[1];var d=h('button','btn','Remove');d.type='button';d.onclick=function(){arr.splice(i,1);sync(arr);rows(id,arr,a,b);pv()};p.oninput=q.oninput=function(){x[0]=p.value;x[1]=q.value;pv()};r.appendChild(p);r.appendChild(q);r.appendChild(d);box.appendChild(r)})}
+function sync(){}
+var LP,LB;
+function buildL(){$('lf').innerHTML=F('ld','Description','','ta')+F('lt','Help topics (separate with commas)')+'<div class="fr"><label>Phone numbers (shown exactly as you type them)</label><div id="lp"></div><button class="btn" id="ap" type="button" style="margin-top:8px">Add number</button></div>'+F('lw','WhatsApp number')+F('le','Email')+F('lb','Website')+'<div class="fr"><label>Opening hours (08:00-17:00 or Closed)</label><div class="two"><input type="text" id="h1" placeholder="Mon-Fri"><input type="text" id="h2" placeholder="Saturday"></div><input type="text" id="h3" placeholder="Sunday" style="margin-top:8px"></div><div class="fr"><label>Branches</label><div id="lbr"></div><button class="btn" id="ab" type="button" style="margin-top:8px">Add branch</button></div><p class="err" id="lerr" hidden></p><button class="btn pri" id="ls" type="button" style="margin-top:16px">Send for approval</button>';
+ LP=CO.phones.map(function(x){return x.slice()});LB=CO.br.map(function(x){return x.slice()});
+ $('ld').value=CO.desc;$('lt').value=CO.topics;$('lw').value=CO.wa;$('le').value=CO.email;$('lb').value=CO.web;$('h1').value=CO.hrs[0];$('h2').value=CO.hrs[1];$('h3').value=CO.hrs[2];
+ rows('lp',LP,'Label','Number');rows('lbr',LB,'Name','Address');
+ $('ap').onclick=function(){LP.push(['','']);rows('lp',LP,'Label','Number')};$('ab').onclick=function(){LB.push(['','']);rows('lbr',LB,'Name','Address')};
+ $('lf').oninput=pv;$('ls').onclick=submitL;pv()}
+function pv(){var p=$('pvw');p.textContent='';var c=h('div','pv'),t=h('div');t.style.cssText='display:flex;align-items:center';t.appendChild(h('div','lg0',CO.name.charAt(0).toUpperCase()));var n=h('div');n.appendChild(h('b',null,CO.name));n.appendChild(h('div','mut',CO.cat));t.appendChild(n);c.appendChild(t);
+ var m=h('div');m.style.margin='10px 0';if(REV.length){m.appendChild(h('span','star',stars(avg())));m.appendChild(document.createTextNode(' '+avg().toFixed(1)+' ('+REV.length+') '))}var d=days();m.appendChild(h('span','chip '+(d===null?'c-r':d<=14?'c-p':'c-a'),d===null?'Unverified':d<=14?'Re-verify':'Verified'));c.appendChild(m);
+ var tp=($('lt')?$('lt').value:'').split(',').map(function(x){return x.trim()}).filter(Boolean).join(' · ');if(tp)c.appendChild(h('div','mut',tp));
+ LP.forEach(function(x){if(x[1]){var r=h('div');r.style.marginTop='8px';r.appendChild(h('span','mut',x[0]?x[0]+': ':''));r.appendChild(h('b',null,x[1]));c.appendChild(r)}});p.appendChild(c)}
+function snap(){return {desc:$('ld').value.trim(),topics:$('lt').value.trim(),wa:$('lw').value.trim(),email:$('le').value.trim(),web:$('lb').value.trim(),hrs:[$('h1').value.trim(),$('h2').value.trim(),$('h3').value.trim()],phones:LP.filter(function(x){return x[1].trim()}).map(function(x){return [x[0].trim(),x[1].trim()]}),br:LB.filter(function(x){return x[0].trim()||x[1].trim()}).map(function(x){return [x[0].trim(),x[1].trim()]})}}
+function submitL(){var s=snap(),e=$('lerr'),ok=/^(\d{1,2}:\d{2}-\d{1,2}:\d{2}|closed)$/i;e.hidden=true;
+ if(!s.phones.length){e.textContent='Add at least one phone number.';e.hidden=false;return}
+ for(var i=0;i<3;i++)if(s.hrs[i]&&!ok.test(s.hrs[i])){e.textContent='Hours must look like 08:00-17:00 or Closed.';e.hidden=false;return}
+ var ch=[],L=[['Description',CO.desc,s.desc],['Help topics',CO.topics,s.topics],['WhatsApp',CO.wa,s.wa],['Email',CO.email,s.email],['Website',CO.web,s.web],['Mon-Fri hours',CO.hrs[0],s.hrs[0]],['Saturday hours',CO.hrs[1],s.hrs[1]],['Sunday hours',CO.hrs[2],s.hrs[2]],['Phone numbers',CO.phones.map(function(x){return x.join(': ')}).join('; '),s.phones.map(function(x){return x.join(': ')}).join('; ')],['Branches',CO.br.map(function(x){return x.join(': ')}).join('; '),s.br.map(function(x){return x.join(': ')}).join('; ')]];
+ L.forEach(function(x){if(x[1]!==x[2])ch.push(x)});if(!ch.length){e.textContent='No changes to send yet.';e.hidden=false;return}PEND={ch:ch};pend();cnt()}
+function pend(){var b=$('pnd');b.textContent='';if(!PEND)return;var c=h('div','card');c.appendChild(h('h2',null,'Waiting for approval'));c.appendChild(h('span','chip c-p','Pending'));PEND.ch.forEach(function(x){c.appendChild(h('div','mut',x[0])).style.marginTop='10px';var g=h('div','diff'),o=h('div',null,x[1]||'(empty)'),n=h('div','n',x[2]||'(empty)');o.insertBefore(h('small',null,'Live now'),o.firstChild);n.insertBefore(h('small',null,'New'),n.firstChild);g.appendChild(o);g.appendChild(n);c.appendChild(g)});
+ var k=h('button','btn','Cancel request');k.type='button';k.onclick=function(){PEND=null;pend();cnt()};c.appendChild(k);b.appendChild(c)}
+/* polls */
+var OPT,PQ='',PE='';
+function newOpts(){OPT=[{l:'',u:''},{l:'',u:''}];PQ='';PE=''}
+function tile(o,i){var t=h('div','tile',o.l||('Option '+(i+1)));t.style.backgroundImage=o.u?'url('+o.u+')':TPL[i%4];if(o.u)t.style.textShadow='0 1px 6px rgba(0,0,0,.7)';return t}
+function ppv(){var p=$('pp');p.textContent='';p.appendChild(h('b',null,PQ||'Your question'));var g=h('div','tg');OPT.forEach(function(o,i){g.appendChild(tile(o,i))});p.appendChild(g)}
+function pform(){var f=$('pf');f.textContent='';f.appendChild(h('h2',null,'New poll'));var q=h('input');q.type='text';q.placeholder='Your question';q.value=PQ;q.oninput=function(){PQ=q.value;ppv()};f.appendChild(q);
+ OPT.forEach(function(o,i){var r=h('div','orow'),l=h('input');l.type='text';l.placeholder='Option '+(i+1)+' name';l.value=o.l;l.oninput=function(){o.l=l.value;ppv()};var fi=h('input');fi.type='file';fi.accept='image/*';fi.onchange=function(){var x=fi.files[0];if(!x)return;if(!/^image\//.test(x.type)||x.size>2097152){PE='Use an image under 2 MB.';pform();return}o.u=URL.createObjectURL(x);PE='';ppv()};r.appendChild(l);r.appendChild(fi);r.appendChild(h('small','mut','Photo optional. Without one we use a colour template.'));
+  if(OPT.length>2){var d=h('button','btn','Remove');d.type='button';d.onclick=function(){OPT.splice(i,1);pform();ppv()};r.appendChild(d)}f.appendChild(r)});
+ if(OPT.length<4){var a=h('button','btn','Add option');a.type='button';a.onclick=function(){OPT.push({l:'',u:''});pform();ppv()};f.appendChild(a)}
+ var dl=h('div','fr');dl.appendChild(h('label',null,'Ends on'));var d=h('input');d.type='date';d.id='pdt';d.min=new Date().toISOString().slice(0,10);dl.appendChild(d);f.appendChild(dl);
+ var e=h('p','err',PE);e.hidden=!PE;e.id='per';f.appendChild(e);var b=h('button','btn pri','Publish poll');b.type='button';b.style.marginTop='16px';
+ b.onclick=function(){var d=$('pdt').value;if(PQ.trim().length<5||OPT.some(function(o){return!o.l.trim()})||!d){PE='Add a question, a name for every option and an end date.';pform();$('pdt').value=d;return}PL.unshift({q:PQ.trim(),o:OPT.map(function(o,i){return [o.l.trim(),0,o.u,i]}),end:d,on:1});newOpts();pform();ppv();plist()};f.appendChild(b)}
+function plist(){var b=$('pl');b.textContent='';if(!PL.length)b.appendChild(h('div','card empty','No polls yet.'));
+ PL.forEach(function(p){var c=h('div','card q'),r=h('div','row'),l=h('div');l.appendChild(h('h3',null,p.q));l.appendChild(h('div','mut','Ends '+fmt(p.end)));r.appendChild(l);r.appendChild(h('span','chip '+(p.on?'c-a':'c-p'),p.on?'Live':'Closed'));c.appendChild(r);
+  var g=h('div','tg');p.o.forEach(function(o){g.appendChild(tile({l:o[0],u:o[2]},o[3]))});c.appendChild(g);var bx=h('div');bx.style.marginTop='8px';bars(bx,p.o.map(function(o){return [o[0],o[1]]}),1);c.appendChild(bx);
+  if(p.on){var k=h('button','btn','Close poll');k.type='button';k.onclick=function(){p.on=0;plist()};c.appendChild(k)}b.appendChild(c)})}
+/* verification */
+function ver(){var b=$('vb');b.textContent='';b.appendChild(banner());var c=h('div','card');c.appendChild(h('h2',null,'Documents'));
+ if(!DOCS.length)c.appendChild(h('div','mut','Nothing sent yet. Send your registration certificate (BRELA), TIN and a letter if you are not the owner.'));
+ DOCS.forEach(function(d){var r=h('div','st');r.appendChild(h('span',null,d[0]));r.appendChild(h('span','chip '+(d[1]==='Approved'?'c-a':d[1]==='Rejected'?'c-r':'c-p'),d[1]));c.appendChild(r)});
+ var f=h('input');f.type='file';f.accept='.pdf,image/*';f.style.marginTop='12px';var e=h('p','err');e.hidden=true;f.onchange=function(){var x=f.files[0];if(!x)return;if(x.size>5242880){e.textContent='File must be under 5 MB.';e.hidden=false;return}DOCS.push([x.name,'Pending review']);ver()};c.appendChild(f);c.appendChild(e);b.appendChild(c);
+ var m=h('div','card');m.style.marginTop='12px';m.appendChild(h('h2',null,'Messages from Kobe Mweusi'));m.appendChild(h('div',null,CO.verified?'Your company has been verified. Your Verified badge is active. We will remind you before it expires.':'We will email you here when your documents have been checked.'));b.appendChild(m)}
+function build(){buildL();pend();thread($('rv'),REV,1);thread($('cq'),Q,0);newOpts();pform();ppv();plist();cnt()}
+</script></body></html>
